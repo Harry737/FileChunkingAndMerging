@@ -1,0 +1,5 @@
+copy /b Monthly-Files.zip.001+Monthly-Files.zip.002+...
+
+All chunks will be merged into Monthly-Files.zip.001.
+
+Then, extract Monthly-Files.zip.001 using 7zip application.
