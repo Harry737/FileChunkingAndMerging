@@ -12,12 +12,12 @@ To split a large file into chunks, follow these steps:
 
 ```batch
 cd "C:\Monthly-Splits"
-
+```
 3. Use the `7za.exe` utility to split the file. Adjust the size of the chunks as needed. In this example, the chunk size is set to 23GB (23000 MB):
 
 ```batch
 "C:\pathtoexe\7za.exe" a -v23000m "Monthly-Files.zip" "D:\Monthly-Backup"
-
+```
 - `C:\Monthly-Splits`: Destination to store the chunks.
 - `-v23000m`: Size of each chunk, in this case, it's 23000 MB (23GB), and you can modify it to your requirements.
 - `Monthly-Files.zip`: The name of the chunk zip files.
@@ -32,11 +32,11 @@ To merge the split chunks back into the original file, follow these steps:
 2. Change the directory to the location where the split chunks are stored, for example:
 ```batch
 cd "C:\Monthly-Splits"
-
+```
 3. Use the `copy` command to merge the split chunks. List all the chunk files in the order they were split:
 ```batch
 copy /b Monthly-Files.zip.001+Monthly-Files.zip.002+...+Monthly-Files.zip.006
-
+```
 All the chunks will be merged into a file named `Monthly-Files.zip.001`.
 
 4. To extract the original file from `Monthly-Files.zip.001`, you can use the 7-Zip application(https://7-zip.org/download.html).
